@@ -11,20 +11,20 @@
 <meta property="og:site_name" content="bSharesX">
 <meta property="og:title" content="bSharesX · Share registers, kept the modern way">
 <meta property="og:description" content="For any company. The register is the legal record, a token mirrors it, and the certificate lives in the holder's wallet.">
-<meta property="og:image" content="https://bsharesx.com/og-bsharesx-v1.png">
+<meta property="og:image" content="https://bsharesx.com/og-bsharesx-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="bSharesX: share registers, kept the modern way. An example certificate that redraws when the register changes.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="bSharesX · Share registers, kept the modern way">
 <meta name="twitter:description" content="For any company. The register is the legal record, a token mirrors it, and the certificate lives in the holder's wallet.">
-<meta name="twitter:image" content="https://bsharesx.com/og-bsharesx-v1.png">
+<meta name="twitter:image" content="https://bsharesx.com/og-bsharesx-v2.png">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#000;--ink:#f4f1e8;--muted:#a9a69c;--dim:#7c7a73;
@@ -163,6 +163,48 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
 .layers .card h3::before{counter-increment:l;content:counter(l) ". ";color:var(--gold-hi)}
 .note{margin:28px 0 0;color:var(--dim);font-size:14px;max-width:760px}
 .legal{margin-top:20px;color:var(--dim);font-size:13px;max-width:760px}
+.stage{position:relative;justify-self:center;width:100%;max-width:400px;--blue:#7f9bff}
+.stage::before{content:"";position:absolute;inset:-6% -10%;z-index:-1;background:radial-gradient(closest-side at 30% 30%,rgba(245,184,0,.22),transparent 70%),radial-gradient(closest-side at 80% 60%,rgba(127,155,255,.14),transparent 70%)}
+.phone{background:#08080a;border:1px solid var(--edge);border-radius:34px;padding:26px 22px 22px;box-shadow:0 40px 90px -40px rgba(245,184,0,.45);animation:arrive 1s var(--ease) both}
+.st-k{margin:0;text-align:center;font:500 11px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.22em;color:var(--gold)}
+.st-n{margin:8px 0 4px;text-align:center;font:800 60px/1 'Fraunces',Georgia,serif;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.st-s{margin:0;text-align:center;font-size:14px;color:var(--muted)}
+.st-s .example{margin-left:6px}
+.cert{position:relative;margin:24px 6px 0;height:176px;border-radius:18px;background:linear-gradient(135deg,#fffaf0,#fbefcf 55%,#e9ecff);color:#17140c;transform:rotate(-2.5deg);box-shadow:0 0 0 5px #08080a,0 0 0 7px var(--blue),0 24px 60px -10px rgba(245,184,0,.45);overflow:hidden;animation:tilt 1s var(--ease) .3s both}
+.ring{position:absolute;inset:0;width:100%;height:100%}
+.ring rect{fill:none;stroke:#c98f00;stroke-width:3;stroke-dasharray:100;stroke-dashoffset:100;animation:draw 1.1s var(--ease) .7s forwards}
+.ring rect.in{stroke-width:1;stroke-dasharray:1.2 1;stroke-dashoffset:0;opacity:0;animation:fade .6s ease 1.6s forwards}
+.dots{position:absolute;right:-40px;top:-50px;width:190px;height:190px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(201,143,0,.22) 0 2px,transparent 2px 9px);opacity:0;animation:fade .8s ease 1.3s forwards}
+.c-b{position:relative;padding:20px 22px;display:flex;flex-direction:column;height:100%;box-sizing:border-box}
+.c-b>*{opacity:0;animation:up .5s var(--ease) both}
+.c-h{display:flex;justify-content:space-between;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a6300;animation-delay:1.2s!important}
+.live{color:#3550e0;letter-spacing:0}
+.c-l{margin-top:12px;font-size:12px;color:#6b604a;animation-delay:1.35s!important}
+.c-who{font:600 26px/1.15 'Fraunces',Georgia,serif;animation-delay:1.45s!important}
+.c-f{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;animation-delay:1.6s!important}
+.c-f b{font:800 28px/1 'Fraunces',Georgia,serif;font-variant-numeric:tabular-nums}
+.c-f small{font:600 11px/1 var(--hf);letter-spacing:.04em}
+.c-f>span{font-size:11px;color:#6b604a}
+.live{animation:pulse 2s ease-in-out 2.4s infinite}
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{padding:7px 12px;border-radius:999px;background:rgba(245,184,0,.12);color:var(--gold-hi);font:600 12px/1 var(--hf);animation:pop .45s var(--ease) 2.2s both}
+.chip.c2{background:rgba(127,155,255,.14);color:#b4c3ff;animation-delay:2.35s}
+.act{margin-top:18px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.act-h{padding:12px 14px;font:600 13px/1 var(--hf)}
+.row{display:flex;gap:12px;align-items:center;padding:10px 14px 12px;border-top:1px solid rgba(255,255,255,.06);animation:slide .6s var(--ease) 2.7s both}
+.row i{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;font-style:normal;background:rgba(127,155,255,.16);color:#b4c3ff}
+.row b{display:block;font:600 13px/1.3 var(--hf)}
+.row small{color:var(--dim);font-size:11px}
+@keyframes arrive{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes tilt{from{opacity:0;transform:rotate(-9deg) translateY(16px)}to{opacity:1;transform:rotate(-2.5deg)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes slide{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (max-width:420px){.st-n{font-size:52px}.cert{height:168px}.c-who{font-size:22px}.c-f b{font-size:24px}}
+@media (prefers-reduced-motion:reduce){.stage *{animation:none!important;opacity:1!important}.ring rect{stroke-dashoffset:0!important}}
 </style>
 </head>
 <body>
@@ -189,14 +231,27 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
     <p class="hint">Almost all of this is <span class="ink">coming</span>. The first register is in testing now, inside bWalletX.</p>
   </div>
 
-  <div class="slip" role="img" aria-label="An example certificate for a fictional company. It shows a holding and redraws when the register changes.">
-    <div class="slip-h"><span>Certificate</span><span class="example">Example</span></div>
-    <div class="slip-who"><div class="av">A</div><div><b>Acme Bakery Ltd</b><small>Ordinary shares · register kept by the company</small></div></div>
-    <div class="ln"><span>Holder</span><span>$jane</span></div>
-    <div class="ln"><span>Entered in register</span><span>12 Mar 2026</span></div>
-    <div class="ln"><span>On-chain record</span><span>Matches the register</span></div>
-    <div class="ln tot"><span>Holding</span><span>1,200 shares</span></div>
-    <div class="seal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd24d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Redraws when the register changes.</span></div>
+  <div class="stage" role="img" aria-label="An example holding in a wallet for a fictional company, Acme Bakery Ltd: 1,200 shares, with a live certificate that redraws when the register changes.">
+    <div class="phone">
+      <p class="st-k">YOUR HOLDING</p>
+      <p class="st-n"><span class="count" data-to="1200">1,200</span></p>
+      <p class="st-s">shares in Acme Bakery Ltd <span class="example">Example</span></p>
+      <div class="cert">
+        <svg class="ring" viewBox="0 0 300 170" preserveAspectRatio="none" aria-hidden="true"><rect x="1.5" y="1.5" width="297" height="167" rx="16" pathLength="100"/><rect class="in" x="9" y="9" width="282" height="152" rx="11" pathLength="100"/></svg>
+        <div class="dots" aria-hidden="true"></div>
+        <div class="c-b">
+          <div class="c-h"><span>SHARE CERTIFICATE · ACME-0007</span><span class="live">● LIVE</span></div>
+          <div class="c-l">Registered holder</div>
+          <div class="c-who">$jane</div>
+          <div class="c-f"><b><span class="count" data-to="1200">1,200</span> <small>ORDINARY</small></b><span>Matches the register</span></div>
+        </div>
+      </div>
+      <div class="chips"><span class="chip">&#10003; Register = record</span><span class="chip c2">Kept by the company</span></div>
+      <div class="act">
+        <div class="act-h">Activity</div>
+        <div class="row r1"><i>&#10003;</i><span><b>Entered on the register</b><small>12 Mar 2026 · entry #7</small></span></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -273,5 +328,10 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
   </div>
   <div class="wrap"><p class="legal">bSharesX is software for keeping share registers. It does not offer, sell or recommend any shares.</p></div>
 </footer>
+<script>
+(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+document.querySelectorAll('.count').forEach(function(el){var to=+el.dataset.to,d=1300,s=null;el.textContent='0';
+setTimeout(function(){requestAnimationFrame(function f(t){s=s||t;var k=Math.min(1,(t-s)/d);k=1-Math.pow(1-k,3);el.textContent=Math.round(to*k).toLocaleString('en-GB');if(k<1)requestAnimationFrame(f)})},el.closest('.cert')?1600:900)})})();
+</script>
 </body>
 </html>
