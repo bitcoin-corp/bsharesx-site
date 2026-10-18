@@ -164,6 +164,7 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
 .note{margin:28px 0 0;color:var(--dim);font-size:14px;max-width:760px}
 .legal{margin-top:20px;color:var(--dim);font-size:13px;max-width:760px}
 html,body{overflow-x:clip}.hero{overflow-x:clip}
+.stage.wait,.stage.wait *{animation-play-state:paused!important}
 .stage{position:relative;justify-self:center;width:100%;max-width:400px;--blue:#7f9bff}
 .stage::before{content:"";position:absolute;inset:-6% -10%;z-index:-1;background:radial-gradient(closest-side at 30% 30%,rgba(245,184,0,.22),transparent 70%),radial-gradient(closest-side at 80% 60%,rgba(127,155,255,.14),transparent 70%)}
 .phone{background:#08080a;border:1px solid var(--edge);border-radius:34px;padding:26px 22px 22px;box-shadow:0 40px 90px -40px rgba(245,184,0,.45);animation:arrive 1s var(--ease) both}
@@ -332,8 +333,12 @@ html,body{overflow-x:clip}.hero{overflow-x:clip}
 </footer>
 <script>
 (function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-document.querySelectorAll('.count').forEach(function(el){var to=+el.dataset.to,d=1300,s=null;el.textContent='0';
-setTimeout(function(){requestAnimationFrame(function f(t){s=s||t;var k=Math.min(1,(t-s)/d);k=1-Math.pow(1-k,3);el.textContent=Math.round(to*k).toLocaleString('en-GB');if(k<1)requestAnimationFrame(f)})},el.closest('.cert')?1600:900)})})();
+var st=document.querySelector('.stage');if(!st)return;var cs=st.querySelectorAll('.count');
+cs.forEach(function(el){el.textContent='0'});st.classList.add('wait');
+function go(){st.classList.remove('wait');cs.forEach(function(el){var to=+el.dataset.to,d=1300,s=null;
+setTimeout(function(){requestAnimationFrame(function f(t){s=s||t;var k=Math.min(1,(t-s)/d);k=1-Math.pow(1-k,3);el.textContent=Math.round(to*k).toLocaleString('en-GB');if(k<1)requestAnimationFrame(f)})},el.closest('.cert')?1600:900)})}
+if(!('IntersectionObserver' in window))return go();
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();go()}},{threshold:.4});io.observe(st.querySelector('.cert')||st)})();
 </script>
 </body>
 </html>
